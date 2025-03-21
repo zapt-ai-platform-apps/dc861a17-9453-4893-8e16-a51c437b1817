@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-morocco-white text-morocco-black font-body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display;
+}
+
+.section-heading {
+  @apply text-3xl md:text-4xl font-bold text-morocco-primary mb-8 text-center font-display;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl;
+}
+
+.map-container {
+  height: 300px;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Animations */
+.fade-in {
+  @apply transition-opacity duration-500 ease-in-out;
+}
+
+/* Leaflet popup customization */
+.leaflet-popup-content-wrapper {
+  @apply rounded-lg shadow-lg;
+}
+
+.leaflet-popup-content {
+  @apply p-2 font-body text-sm;
+}
+
+.leaflet-popup-tip {
+  @apply bg-white;
+}
+
+/* Custom marker */
+.map-marker-icon {
+  @apply bg-morocco-primary text-white rounded-full p-2 border-2 border-white shadow-md;
+}
+
+/* Tailwind utilities */
+@layer components {
+  .btn-primary {
+    @apply bg-morocco-primary hover:bg-morocco-dark text-white font-medium py-2 px-4 rounded-md transition-colors duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-morocco-white border border-morocco-primary text-morocco-primary hover:bg-morocco-light font-medium py-2 px-4 rounded-md transition-colors duration-300;
+  }
+  
+  .section-container {
+    @apply py-16 px-4 md:px-8;
+  }
+  
+  .content-container {
+    @apply container mx-auto max-w-7xl;
+  }
+  
+  .feature-icon {
+    @apply text-morocco-primary w-6 h-6 mr-2;
+  }
+}

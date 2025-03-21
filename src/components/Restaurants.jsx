@@ -1,4 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { FaMapMarkerAlt, FaPhone, FaUtensils, FaStar, FaExternalLinkAlt } from 'react-icons/fa';
+import MapComponent from './MapComponent';
 
 const Restaurants = () => {
   const restaurants = [
@@ -9,8 +12,11 @@ const Restaurants = () => {
       description: "Authentic kosher Moroccan cuisine in a beautifully decorated setting. Offers a blend of traditional Moroccan flavors prepared according to kosher dietary laws.",
       address: "Rue de la Liberté, Gueliz, Marrakech",
       phone: "+212 524 XX XX XX",
-      image: "PLACEHOLDER",
-      imageRequest: "Kosher Moroccan restaurant with traditional decor and table settings",
+      rating: 4.7,
+      specialties: ["Tagine", "Couscous", "Pastilla"],
+      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxfHxLb3NoZXIlMjBNb3JvY2NhbiUyMHJlc3RhdXJhbnQlMjB3aXRoJTIwdHJhZGl0aW9uYWwlMjBkZWNvciUyMGFuZCUyMHRhYmxlJTIwc2V0dGluZ3N8ZW58MHx8fHwxNzQyNjExOTkzfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      lat: 31.6310,
+      lng: -8.0120,
     },
     {
       id: 2,
@@ -19,8 +25,11 @@ const Restaurants = () => {
       description: "Family-run kosher restaurant specializing in Mediterranean Jewish cuisine with Moroccan influences. Known for their homemade breads and slow-cooked tagines.",
       address: "Near Mellah (Jewish Quarter), Marrakech",
       phone: "+212 524 XX XX XX",
-      image: "PLACEHOLDER",
-      imageRequest: "Jewish Moroccan restaurant interior with traditional setting and kosher food",
+      rating: 4.6,
+      specialties: ["Fish Tagine", "Challah", "Moroccan Salads"],
+      image: "https://images.unsplash.com/photo-1576675784201-0e142b423952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHw0fHxKZXdpc2glMjBNb3JvY2NhbiUyMHJlc3RhdXJhbnQlMjBpbnRlcmlvciUyMHdpdGglMjB0cmFkaXRpb25hbCUyMHNldHRpbmclMjBhbmQlMjBrb3NoZXIlMjBmb29kfGVufDB8fHx8MTc0MjYxMTk5M3ww&ixlib=rb-4.0.3&q=80&w=1080",
+      lat: 31.6280,
+      lng: -7.9920,
     },
     {
       id: 3,
@@ -29,51 +38,165 @@ const Restaurants = () => {
       description: "Run by the local Chabad community, this restaurant offers kosher meals in a welcoming atmosphere. Perfect for Shabbat dinners and Jewish holidays.",
       address: "Rue Ibn Toumert, Marrakech",
       phone: "+212 524 XX XX XX",
-      image: "PLACEHOLDER",
-      imageRequest: "Chabad house in Morocco with kosher dining setting",
+      rating: 4.8,
+      specialties: ["Cholent", "Israeli Salads", "Shabbat Dinner"],
+      image: "https://images.unsplash.com/photo-1504479573489-7c0039e22b4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHw0fHxDaGFiYWQlMjBob3VzZSUyMGluJTIwTW9yb2NjbyUyMHdpdGglMjBrb3NoZXIlMjBkaW5pbmclMjBzZXR0aW5nfGVufDB8fHx8MTc0MjYxMTk5M3ww&ixlib=rb-4.0.3&q=80&w=1080",
+      lat: 31.6350,
+      lng: -8.0050,
     }
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+  
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5 }
+    }
+  };
+
+  // Restaurant locations for the map
+  const restaurantLocations = restaurants.map(restaurant => ({
+    name: restaurant.name,
+    lat: restaurant.lat,
+    lng: restaurant.lng,
+    address: restaurant.address,
+    description: restaurant.cuisine
+  }));
+
   return (
-    <section id="restaurants" className="py-12 px-4 bg-white">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-amber-800 mb-6 text-center">Kosher Restaurants</h2>
-        <div className="space-y-6">
+    <section id="restaurants" className="section-container bg-white">
+      <div className="content-container">
+        <h2 className="section-heading">Kosher Restaurants</h2>
+        
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <motion.div variants={item} className="mb-8">
+            <MapComponent 
+              locations={restaurantLocations} 
+              center={[31.6295, -8.0092]} 
+              zoom={13}
+              height="400px"
+            />
+          </motion.div>
+        </motion.div>
+        
+        <motion.div 
+          className="space-y-8"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {restaurants.map(restaurant => (
-            <div key={restaurant.id} className="bg-amber-50 rounded-lg shadow-md overflow-hidden">
+            <motion.div 
+              key={restaurant.id} 
+              className="bg-morocco-light bg-opacity-10 rounded-lg shadow-lg overflow-hidden"
+              variants={item}
+            >
               <div className="md:flex">
-                <div className="md:w-1/3">
+                <div className="md:w-1/3 relative overflow-hidden">
                   <img 
                     src={restaurant.image} 
-                    data-image-request={restaurant.imageRequest}
                     alt={restaurant.name} 
-                    className="w-full h-64 md:h-full object-cover" 
+                    className="w-full h-64 md:h-full object-cover transition-transform duration-700 hover:scale-105" 
                   />
+                  <div className="absolute top-4 right-4 bg-morocco-primary text-white py-1 px-3 rounded-full flex items-center text-sm font-medium">
+                    <FaStar className="mr-1 text-yellow-300" />
+                    {restaurant.rating}
+                  </div>
                 </div>
                 <div className="p-6 md:w-2/3">
-                  <h3 className="text-xl font-bold text-amber-800 mb-1">{restaurant.name}</h3>
-                  <p className="text-amber-600 font-medium mb-3">Cuisine: {restaurant.cuisine}</p>
+                  <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                    <h3 className="text-2xl font-bold text-morocco-primary font-display">{restaurant.name}</h3>
+                    <span className="px-4 py-1 bg-morocco-secondary bg-opacity-20 text-morocco-secondary rounded-full text-sm font-medium">
+                      {restaurant.cuisine}
+                    </span>
+                  </div>
+                  
                   <p className="text-gray-700 mb-4">{restaurant.description}</p>
-                  <div className="text-gray-600">
-                    <p className="mb-2 flex items-start">
-                      <svg className="w-5 h-5 text-amber-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                      </svg>
+                  
+                  <div className="mb-4">
+                    <h4 className="font-medium text-morocco-dark mb-2">Specialties:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {restaurant.specialties.map((specialty, idx) => (
+                        <span 
+                          key={idx}
+                          className="bg-morocco-light bg-opacity-30 text-morocco-dark px-3 py-1 rounded-full text-sm"
+                        >
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="text-gray-600 space-y-2">
+                    <p className="flex items-start">
+                      <FaMapMarkerAlt className="text-morocco-secondary w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />
                       <span>{restaurant.address}</span>
                     </p>
                     <p className="flex items-center">
-                      <svg className="w-5 h-5 text-amber-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                      </svg>
+                      <FaPhone className="text-morocco-secondary w-5 h-5 mr-2 flex-shrink-0" />
                       <span>{restaurant.phone}</span>
                     </p>
                   </div>
+                  
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <button className="btn-primary flex items-center cursor-pointer">
+                      <FaUtensils className="mr-2" />
+                      View Menu
+                    </button>
+                    <button className="btn-secondary flex items-center cursor-pointer">
+                      <FaExternalLinkAlt className="mr-2" />
+                      Visit Website
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+        
+        <motion.div 
+          className="mt-12 p-6 bg-morocco-light bg-opacity-10 rounded-lg border border-morocco-light"
+          variants={item}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h3 className="text-xl font-bold text-morocco-primary mb-4 font-display">Kosher Food Tips</h3>
+          <ul className="space-y-2">
+            <li className="flex items-start">
+              <span className="text-morocco-primary mr-2">•</span>
+              Pre-arrange Shabbat meals with Chabad Marrakech if staying over Shabbat
+            </li>
+            <li className="flex items-start">
+              <span className="text-morocco-primary mr-2">•</span>
+              Many hotels can accommodate kosher meal requests with advance notice
+            </li>
+            <li className="flex items-start">
+              <span className="text-morocco-primary mr-2">•</span>
+              Consider bringing some kosher snacks for day trips outside the city
+            </li>
+            <li className="flex items-start">
+              <span className="text-morocco-primary mr-2">•</span>
+              Fresh fruits, vegetables and sealed kosher products are available in local markets
+            </li>
+          </ul>
+        </motion.div>
       </div>
     </section>
   );
