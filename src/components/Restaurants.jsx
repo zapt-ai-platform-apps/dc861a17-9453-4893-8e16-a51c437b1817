@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaPhone, FaUtensils, FaStar, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaUtensils, FaStar } from 'react-icons/fa';
 import MapComponent from './MapComponent';
 
 const Restaurants = () => {
@@ -14,7 +14,6 @@ const Restaurants = () => {
       phone: "+212 524 XX XX XX",
       rating: 4.7,
       specialties: ["Tagine", "Couscous", "Pastilla"],
-      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxfHxLb3NoZXIlMjBNb3JvY2NhbiUyMHJlc3RhdXJhbnQlMjB3aXRoJTIwdHJhZGl0aW9uYWwlMjBkZWNvciUyMGFuZCUyMHRhYmxlJTIwc2V0dGluZ3N8ZW58MHx8fHwxNzQyNjExOTkzfDA&ixlib=rb-4.0.3&q=80&w=1080",
       lat: 31.6310,
       lng: -8.0120,
     },
@@ -27,7 +26,6 @@ const Restaurants = () => {
       phone: "+212 524 XX XX XX",
       rating: 4.6,
       specialties: ["Fish Tagine", "Challah", "Moroccan Salads"],
-      image: "https://images.unsplash.com/photo-1576675784201-0e142b423952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHw0fHxKZXdpc2glMjBNb3JvY2NhbiUyMHJlc3RhdXJhbnQlMjBpbnRlcmlvciUyMHdpdGglMjB0cmFkaXRpb25hbCUyMHNldHRpbmclMjBhbmQlMjBrb3NoZXIlMjBmb29kfGVufDB8fHx8MTc0MjYxMTk5M3ww&ixlib=rb-4.0.3&q=80&w=1080",
       lat: 31.6280,
       lng: -7.9920,
     },
@@ -40,9 +38,44 @@ const Restaurants = () => {
       phone: "+212 524 XX XX XX",
       rating: 4.8,
       specialties: ["Cholent", "Israeli Salads", "Shabbat Dinner"],
-      image: "https://images.unsplash.com/photo-1504479573489-7c0039e22b4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHw0fHxDaGFiYWQlMjBob3VzZSUyMGluJTIwTW9yb2NjbyUyMHdpdGglMjBrb3NoZXIlMjBkaW5pbmclMjBzZXR0aW5nfGVufDB8fHx8MTc0MjYxMTk5M3ww&ixlib=rb-4.0.3&q=80&w=1080",
       lat: 31.6350,
       lng: -8.0050,
+    },
+    {
+      id: 4,
+      name: "Kosher Feast Marrakech",
+      cuisine: "Moroccan-Sephardic",
+      description: "Specializing in Sephardic Jewish cuisine with a Moroccan twist. Features traditional recipes passed down through generations of Moroccan Jews.",
+      address: "Avenue Mohammed V, Marrakech",
+      phone: "+212 524 XX XX XX",
+      rating: 4.5,
+      specialties: ["Dafina", "Sfenj", "Meatballs with Eggs"],
+      lat: 31.6320,
+      lng: -8.0080,
+    },
+    {
+      id: 5,
+      name: "Beth-El Kosher Restaurant",
+      cuisine: "Middle Eastern-Kosher",
+      description: "A kosher dining spot offering Middle Eastern and Moroccan dishes with excellent vegetarian options. Known for their falafel and fresh salads.",
+      address: "Near Jewish Cemetery, Marrakech",
+      phone: "+212 524 XX XX XX",
+      rating: 4.6,
+      specialties: ["Falafel", "Shakshuka", "Hummus"],
+      lat: 31.6290,
+      lng: -8.0030,
+    },
+    {
+      id: 6,
+      name: "Eden Kosher Bistro",
+      cuisine: "European-Kosher",
+      description: "A modern kosher bistro serving European cuisine with Moroccan influences. Popular for breakfast and lunch with a pleasant outdoor seating area.",
+      address: "Rue Kennaria, Medina, Marrakech",
+      phone: "+212 524 XX XX XX",
+      rating: 4.4,
+      specialties: ["Kosher Pastries", "Continental Breakfast", "Fresh Juices"],
+      lat: 31.6270,
+      lng: -8.0010,
     }
   ];
 
@@ -104,67 +137,46 @@ const Restaurants = () => {
           {restaurants.map(restaurant => (
             <motion.div 
               key={restaurant.id} 
-              className="bg-morocco-light bg-opacity-10 rounded-lg shadow-lg overflow-hidden"
+              className="bg-morocco-light bg-opacity-10 rounded-lg shadow-lg overflow-hidden p-6"
               variants={item}
             >
-              <div className="md:flex">
-                <div className="md:w-1/3 relative overflow-hidden">
-                  <img 
-                    src={restaurant.image} 
-                    alt={restaurant.name} 
-                    className="w-full h-64 md:h-full object-cover transition-transform duration-700 hover:scale-105" 
-                  />
-                  <div className="absolute top-4 right-4 bg-morocco-primary text-white py-1 px-3 rounded-full flex items-center text-sm font-medium">
-                    <FaStar className="mr-1 text-yellow-300" />
-                    {restaurant.rating}
-                  </div>
-                </div>
-                <div className="p-6 md:w-2/3">
-                  <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-                    <h3 className="text-2xl font-bold text-morocco-primary font-display">{restaurant.name}</h3>
-                    <span className="px-4 py-1 bg-morocco-secondary bg-opacity-20 text-morocco-secondary rounded-full text-sm font-medium">
-                      {restaurant.cuisine}
+              <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                <h3 className="text-2xl font-bold text-morocco-primary font-display">{restaurant.name}</h3>
+                <span className="px-4 py-1 bg-morocco-secondary bg-opacity-20 text-morocco-secondary rounded-full text-sm font-medium">
+                  {restaurant.cuisine}
+                </span>
+              </div>
+              
+              <div className="inline-block bg-morocco-primary text-white py-1 px-3 rounded-full flex items-center text-sm font-medium mb-4">
+                <FaStar className="mr-1 text-yellow-300" />
+                {restaurant.rating}
+              </div>
+              
+              <p className="text-gray-700 mb-4">{restaurant.description}</p>
+              
+              <div className="mb-4">
+                <h4 className="font-medium text-morocco-dark mb-2">Specialties:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {restaurant.specialties.map((specialty, idx) => (
+                    <span 
+                      key={idx}
+                      className="bg-morocco-light bg-opacity-30 text-morocco-dark px-3 py-1 rounded-full text-sm"
+                    >
+                      {specialty}
                     </span>
-                  </div>
-                  
-                  <p className="text-gray-700 mb-4">{restaurant.description}</p>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-medium text-morocco-dark mb-2">Specialties:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {restaurant.specialties.map((specialty, idx) => (
-                        <span 
-                          key={idx}
-                          className="bg-morocco-light bg-opacity-30 text-morocco-dark px-3 py-1 rounded-full text-sm"
-                        >
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="text-gray-600 space-y-2">
-                    <p className="flex items-start">
-                      <FaMapMarkerAlt className="text-morocco-secondary w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>{restaurant.address}</span>
-                    </p>
-                    <p className="flex items-center">
-                      <FaPhone className="text-morocco-secondary w-5 h-5 mr-2 flex-shrink-0" />
-                      <span>{restaurant.phone}</span>
-                    </p>
-                  </div>
-                  
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    <button className="btn-primary flex items-center cursor-pointer">
-                      <FaUtensils className="mr-2" />
-                      View Menu
-                    </button>
-                    <button className="btn-secondary flex items-center cursor-pointer">
-                      <FaExternalLinkAlt className="mr-2" />
-                      Visit Website
-                    </button>
-                  </div>
+                  ))}
                 </div>
+              </div>
+              
+              <div className="text-gray-600 space-y-2">
+                <p className="flex items-start">
+                  <FaMapMarkerAlt className="text-morocco-secondary w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />
+                  <span>{restaurant.address}</span>
+                </p>
+                <p className="flex items-center">
+                  <FaPhone className="text-morocco-secondary w-5 h-5 mr-2 flex-shrink-0" />
+                  <span>{restaurant.phone}</span>
+                </p>
               </div>
             </motion.div>
           ))}
@@ -194,6 +206,14 @@ const Restaurants = () => {
             <li className="flex items-start">
               <span className="text-morocco-primary mr-2">•</span>
               Fresh fruits, vegetables and sealed kosher products are available in local markets
+            </li>
+            <li className="flex items-start">
+              <span className="text-morocco-primary mr-2">•</span>
+              The Mellah (Jewish Quarter) has several small shops with kosher products
+            </li>
+            <li className="flex items-start">
+              <span className="text-morocco-primary mr-2">•</span>
+              It's recommended to call restaurants before visiting to confirm they are open
             </li>
           </ul>
         </motion.div>

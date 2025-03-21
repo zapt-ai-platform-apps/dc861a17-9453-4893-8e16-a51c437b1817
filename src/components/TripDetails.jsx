@@ -8,7 +8,8 @@ import {
   FaPassport,
   FaExchangeAlt,
   FaUserFriends,
-  FaUtensils
+  FaUtensils,
+  FaChair
 } from 'react-icons/fa';
 
 const TripDetails = () => {
@@ -63,21 +64,81 @@ const TripDetails = () => {
                   <FaPlane className="feature-icon" />
                   Flights
                 </h3>
-                <div className="pl-8 space-y-2">
-                  <div className="bg-morocco-light bg-opacity-30 p-4 rounded-md mb-3">
-                    <h4 className="font-medium mb-1">Outbound Flight</h4>
-                    <p>EasyJet EZY8893</p>
-                    <p>March 24, 2025</p>
-                    <p>Departure: London Gatwick 07:45</p>
-                    <p>Arrival: Marrakech 11:20</p>
+                <div className="pl-8 space-y-6">
+                  <div className="bg-morocco-light bg-opacity-30 p-4 rounded-md">
+                    <div className="flex items-center mb-2">
+                      <img src="https://www.easyjet.com/favicon.ico" alt="easyJet" className="h-5 w-5 mr-2" />
+                      <h4 className="font-medium">easyJet</h4>
+                    </div>
+                    <p className="text-sm uppercase text-gray-600 mb-1">Flight Depart Outbound: EZY2265</p>
+                    <p className="font-medium mb-1">Mon 24th Mar 2025</p>
+                    <div className="flex items-center justify-between my-3">
+                      <div>
+                        <p className="font-bold">Manchester</p>
+                        <p className="text-sm text-gray-600">(MAN) 07:30</p>
+                      </div>
+                      <div className="text-morocco-primary px-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-bold">Marrakech</p>
+                        <p className="text-sm text-gray-600">(RAK) 11:20</p>
+                      </div>
+                    </div>
+                    <div className="mt-3 pt-3 border-t border-gray-200">
+                      <p className="font-medium mb-1">Your seats</p>
+                      <p className="text-sm mb-1">Standard</p>
+                      <div className="flex space-x-3">
+                        <div className="flex items-center justify-center w-10 h-10 bg-morocco-primary text-white rounded-md">
+                          <FaChair className="h-4 w-4 mr-1" />
+                          <span>13A</span>
+                        </div>
+                        <div className="flex items-center justify-center w-10 h-10 bg-morocco-primary text-white rounded-md">
+                          <FaChair className="h-4 w-4 mr-1" />
+                          <span>13B</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
                   <div className="bg-morocco-light bg-opacity-30 p-4 rounded-md">
-                    <h4 className="font-medium mb-1">Return Flight</h4>
-                    <p>EasyJet EZY8894</p>
-                    <p>March 27, 2025</p>
-                    <p>Departure: Marrakech 11:40</p>
-                    <p>Arrival: London Gatwick 15:15</p>
+                    <div className="flex items-center mb-2">
+                      <img src="https://www.easyjet.com/favicon.ico" alt="easyJet" className="h-5 w-5 mr-2" />
+                      <h4 className="font-medium">easyJet</h4>
+                    </div>
+                    <p className="text-sm uppercase text-gray-600 mb-1">Flight Depart Return: EZY2266</p>
+                    <p className="font-medium mb-1">Thu 27th Mar 2025</p>
+                    <div className="flex items-center justify-between my-3">
+                      <div>
+                        <p className="font-bold">Marrakech</p>
+                        <p className="text-sm text-gray-600">(RAK) 11:40</p>
+                      </div>
+                      <div className="text-morocco-primary px-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-bold">Manchester</p>
+                        <p className="text-sm text-gray-600">(MAN) 15:45</p>
+                      </div>
+                    </div>
+                    <div className="mt-3 pt-3 border-t border-gray-200">
+                      <p className="font-medium mb-1">Your seats</p>
+                      <p className="text-sm mb-1">Rear Standard</p>
+                      <div className="flex space-x-3">
+                        <div className="flex items-center justify-center w-10 h-10 bg-morocco-primary text-white rounded-md">
+                          <FaChair className="h-4 w-4 mr-1" />
+                          <span>28A</span>
+                        </div>
+                        <div className="flex items-center justify-center w-10 h-10 bg-morocco-primary text-white rounded-md">
+                          <FaChair className="h-4 w-4 mr-1" />
+                          <span>28B</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
