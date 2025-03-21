@@ -11,7 +11,7 @@ const Activities = () => {
       duration: "Half-day (4 hours)",
       rating: 4.8,
       groupSize: "Small groups (max 10)",
-      image: "https://images.unsplash.com/photo-1519003722824-194d4c65eade?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwyfHxBVFYlMjBxdWFkJTIwYmlrZXMlMjBpbiUyME1vcm9jY2FuJTIwZGVzZXJ0JTIwd2l0aCUyMEF0bGFzJTIwbW91bnRhaW5zJTIwaW4lMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc0MjYxMTkxM3ww&ixlib=rb-4.0.3&q=80&w=1080",
+      image: "https://images.unsplash.com/photo-1519003722824-194d4c65eade?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwyfHxBVFYlMjBxdWFkJTIwYmlrZXMlMjBpbiUyME1vcm9jY2FuJTIwZGVzZXJ0JTIwd2l0aCUyMEF0bGFzJTIwbW91bnRhaW5zJTIwaW4lMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc0MjYxMTkxM3ww&ixlib=rb-4.0.3&q=80&w=1080"
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Activities = () => {
       duration: "Full day (6-7 hours)",
       rating: 4.9,
       groupSize: "Small groups (max 12)",
-      image: "https://images.unsplash.com/photo-1597212720402-db3326234774?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwyfHxNYXJyYWtlY2glMjBtZWRpbmElMjBtYXJrZXRwbGFjZSUyMHdpdGglMjB0cmFkaXRpb25hbCUyME1vcm9jY2FuJTIwYXJjaGl0ZWN0dXJlJTIwYW5kJTIwYnVzeSUyMHN0cmVldHN8ZW58MHx8fHwxNzQyNjExOTEzfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      image: "https://images.unsplash.com/photo-1597212720402-db3326234774?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwyfHxNYXJyYWtlY2glMjBtZWRpbmElMjBtYXJrZXRwbGFjZSUyMHdpdGglMjB0cmFkaXRpb25hbCUyME1vcm9jY2FuJTIwYXJjaGl0ZWN0dXJlJTIwYW5kJTIwYnVzeSUyMHN0cmVldHN8ZW58MHx8fHwxNzQyNjExOTEzfDA&ixlib=rb-4.0.3&q=80&w=1080"
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const Activities = () => {
       duration: "2 hours",
       rating: 4.7,
       groupSize: "Individual or couples",
-      image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxfHxUcmFkaXRpb25hbCUyME1vcm9jY2FuJTIwaGFtbWFtJTIwc3BhJTIwaW50ZXJpb3IlMjB3aXRoJTIwb3JuYXRlJTIwdGlsZXdvcmslMjBhbmQlMjBhbWJpZW50JTIwbGlnaHRpbmd8ZW58MHx8fHwxNzQyNjExOTEzfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxfHxUcmFkaXRpb25hbCUyME1vcm9jY2FuJTIwaGFtbWFtJTIwc3BhJTIwaW50ZXJpb3IlMjB3aXRoJTIwb3JuYXRlJTIwdGlsZXdvcmslMjBhbmQlMjBhbWJpZW50JTIwbGlnaHRpbmd8ZW58MHx8fHwxNzQyNjExOTEzfDA&ixlib=rb-4.0.3&q=80&w=1080"
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ const Activities = () => {
       duration: "Full day (8-9 hours)",
       rating: 4.9,
       groupSize: "Small groups (max 8)",
-      image: "https://images.unsplash.com/photo-1548019979-11ce20dcab21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxfHxBdGxhcyUyME1vdW50YWlucyUyME1vcm9jY28lMjB3aXRoJTIwc21hbGwlMjBCZXJiZXIlMjB2aWxsYWdlJTIwaW4lMjB0aGUlMjB2YWxsZXl8ZW58MHx8fHwxNzQyNjExOTEzfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      image: "https://images.unsplash.com/photo-1548019979-11ce20dcab21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxfHxBdGxhcyUyME1vdW50YWlucyUyME1vcm9jY28lMjB3aXRoJTIwc21hbGwlMjBCZXJiZXIlMjB2aWxsYWdlJTIwaW4lMjB0aGUlMjB2YWxsZXl8ZW58MHx8fHwxNzQyNjExOTEzfDA&ixlib=rb-4.0.3&q=80&w=1080"
     }
   ];
 
@@ -57,6 +57,13 @@ const Activities = () => {
       opacity: 1,
       transition: { duration: 0.5 }
     }
+  };
+
+  // Image error handling
+  const handleImageError = (e) => {
+    const dataRequest = e.target.getAttribute('data-image-request');
+    console.log(`Image failed to load: ${e.target.src}`);
+    e.target.src = `https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80`;
   };
 
   return (
@@ -82,6 +89,8 @@ const Activities = () => {
                   src={activity.image} 
                   alt={activity.name} 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
+                  onError={handleImageError}
+                  data-image-request={`${activity.name} in Morocco`}
                 />
                 <div className="absolute top-4 right-4 bg-morocco-primary text-white py-1 px-3 rounded-full flex items-center text-sm font-medium">
                   <FaStar className="mr-1 text-yellow-300" />

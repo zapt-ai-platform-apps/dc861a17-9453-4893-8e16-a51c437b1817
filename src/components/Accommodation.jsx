@@ -12,7 +12,7 @@ import {
   FaWifi,
   FaClock,
   FaTree,
-  FaConciergeBell // Corrected from FaConcierge to FaConciergeBell
+  FaConciergeBell
 } from 'react-icons/fa';
 import MapComponent from './MapComponent';
 
@@ -59,8 +59,17 @@ const Accommodation = () => {
     { icon: <FaWifi className="w-5 h-5 text-morocco-primary" />, name: "Free Wi-Fi" },
     { icon: <FaClock className="w-5 h-5 text-morocco-primary" />, name: "24h Reception" },
     { icon: <FaTree className="w-5 h-5 text-morocco-primary" />, name: "Garden & Terrace" },
-    { icon: <FaConciergeBell className="w-5 h-5 text-morocco-primary" />, name: "Concierge Service" }, // Corrected from FaConcierge to FaConciergeBell
+    { icon: <FaConciergeBell className="w-5 h-5 text-morocco-primary" />, name: "Concierge Service" },
   ];
+
+  // Image error handling
+  const handleImageError = (e) => {
+    const dataRequest = e.target.getAttribute('data-image-request');
+    console.log(`Image failed to load: ${e.target.src}`);
+    if (dataRequest) {
+      e.target.src = "https://images.unsplash.com/photo-1578681041175-9717c638d0bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80";
+    }
+  };
 
   return (
     <section id="accommodation" className="section-container bg-white">
@@ -86,7 +95,9 @@ const Accommodation = () => {
               <img 
                 src="https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxMHx8S2VuemklMjBSb3NlJTIwR2FyZGVuJTIwSG90ZWwlMjBpbiUyME1hcnJha2VjaCUyME1vcm9jY28lMjBleHRlcmlvciUyMHZpZXclMjBsdXh1cnklMjBob3RlbHxlbnwwfHx8fDE3NDI1NjIxNTd8MA&ixlib=rb-4.0.3&q=80&w=1080" 
                 alt="Kenzi Rose Garden Hotel" 
-                className="w-full h-64 object-cover rounded-lg shadow-md mb-6" 
+                className="w-full h-64 object-cover rounded-lg shadow-md mb-6"
+                onError={handleImageError}
+                data-image-request="Luxury hotel in Marrakech exterior view"
               />
               
               <div className="space-y-4">
@@ -128,7 +139,9 @@ const Accommodation = () => {
               <img 
                 src="https://images.unsplash.com/photo-1517840901100-8179e982acb7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxMHx8U3VwZXJpb3IlMjBSb29tJTIwd2l0aCUyMFR3aW4lMjBCZWRzJTIwYXQlMjBLZW56aSUyMFJvc2UlMjBHYXJkZW4lMjBIb3RlbCUyME1hcnJha2VjaCUyMGludGVyaW9yfGVufDB8fHx8MTc0MjU2MjE1N3ww&ixlib=rb-4.0.3&q=80&w=1080" 
                 alt="Superior Room" 
-                className="w-full h-64 object-cover rounded-lg shadow-md mb-6" 
+                className="w-full h-64 object-cover rounded-lg shadow-md mb-6"
+                onError={handleImageError}
+                data-image-request="Luxury hotel room with twin beds interior"
               />
               
               <div className="space-y-6">
@@ -165,26 +178,29 @@ const Accommodation = () => {
           >
             <div className="overflow-hidden rounded-lg shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxfHxLZW56aSUyMFJvc2UlMjBHYXJkZW4lMjBIb3RlbCUyMHBvb2wlMjBNYXJyYWtlY2h8ZW58MHx8fHwxNzQyNjExODU1fDA&ixlib=rb-4.0.3&q=80&w=1080" 
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
                 alt="Kenzi Rose Garden Pool" 
                 className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500" 
                 data-image-request="Kenzi Rose Garden Hotel pool in Marrakech"
+                onError={handleImageError}
               />
             </div>
             <div className="overflow-hidden rounded-lg shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwyfHxLZW56aSUyMFJvc2UlMjBHYXJkZW4lMjBIb3RlbCUyMGxvYmJ5JTIwTWFycmFrZWNofGVufDB8fHx8MTc0MjYxMTg1NXww&ixlib=rb-4.0.3&q=80&w=1080" 
+                src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" 
                 alt="Kenzi Rose Garden Lobby" 
                 className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500" 
                 data-image-request="Kenzi Rose Garden Hotel lobby in Marrakech"
+                onError={handleImageError}
               />
             </div>
             <div className="overflow-hidden rounded-lg shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwzfHxLZW56aSUyMFJvc2UlMjBHYXJkZW4lMjBIb3RlbCUyMHNwYSUyME1hcnJha2VjaCUyMHNwYXxlbnwwfHx8fDE3NDI2MTE4NTV8MA&ixlib=rb-4.0.3&q=80&w=1080" 
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
                 alt="Kenzi Rose Garden Spa" 
                 className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500" 
                 data-image-request="Kenzi Rose Garden Hotel spa in Marrakech"
+                onError={handleImageError}
               />
             </div>
           </motion.div>
