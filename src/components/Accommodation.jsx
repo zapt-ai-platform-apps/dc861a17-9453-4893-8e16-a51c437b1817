@@ -12,7 +12,7 @@ import {
   FaWifi,
   FaClock,
   FaTree,
-  FaConciergebell
+  FaConciergeBell
 } from 'react-icons/fa';
 import MapComponent from './MapComponent';
 
@@ -59,7 +59,7 @@ const Accommodation = () => {
     { icon: <FaWifi className="w-5 h-5 text-morocco-primary" />, name: "Free Wi-Fi" },
     { icon: <FaClock className="w-5 h-5 text-morocco-primary" />, name: "24h Reception" },
     { icon: <FaTree className="w-5 h-5 text-morocco-primary" />, name: "Garden & Terrace" },
-    { icon: <FaConciergebell className="w-5 h-5 text-morocco-primary" />, name: "Concierge Service" },
+    { icon: <FaConciergeBell className="w-5 h-5 text-morocco-primary" />, name: "Concierge Service" },
   ];
 
   return (
