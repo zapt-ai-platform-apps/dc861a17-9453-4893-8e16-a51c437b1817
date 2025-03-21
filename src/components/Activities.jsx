@@ -11,7 +11,7 @@ const Activities = () => {
       duration: "Half-day (4 hours)",
       rating: 4.8,
       groupSize: "Small groups (max 10)",
-      image: "https://images.unsplash.com/photo-1519003722824-194d4c65eade?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwyfHxBVFYlMjBxdWFkJTIwYmlrZXMlMjBpbiUyME1vcm9jY2FuJTIwZGVzZXJ0JTIwd2l0aCUyMEF0bGFzJTIwbW91bnRhaW5zJTIwaW4lMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc0MjYxMTkxM3ww&ixlib=rb-4.0.3&q=80&w=1080"
+      image: "https://images.unsplash.com/photo-1588975247099-e897a55c2492?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.0.3&q=80&w=1080"
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Activities = () => {
       duration: "Full day (6-7 hours)",
       rating: 4.9,
       groupSize: "Small groups (max 12)",
-      image: "https://images.unsplash.com/photo-1597212720402-db3326234774?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwyfHxNYXJyYWtlY2glMjBtZWRpbmElMjBtYXJrZXRwbGFjZSUyMHdpdGglMjB0cmFkaXRpb25hbCUyME1vcm9jY2FuJTIwYXJjaGl0ZWN0dXJlJTIwYW5kJTIwYnVzeSUyMHN0cmVldHN8ZW58MHx8fHwxNzQyNjExOTEzfDA&ixlib=rb-4.0.3&q=80&w=1080"
+      image: "https://images.unsplash.com/photo-1581443459255-e895f2a4e32b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.0.3&q=80&w=1080"
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const Activities = () => {
       duration: "Full day (8-9 hours)",
       rating: 4.9,
       groupSize: "Small groups (max 8)",
-      image: "https://images.unsplash.com/photo-1548019979-11ce20dcab21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwxfHxBdGxhcyUyME1vdW50YWlucyUyME1vcm9jY28lMjB3aXRoJTIwc21hbGwlMjBCZXJiZXIlMjB2aWxsYWdlJTIwaW4lMjB0aGUlMjB2YWxsZXl8ZW58MHx8fHwxNzQyNjExOTEzfDA&ixlib=rb-4.0.3&q=80&w=1080"
+      image: "https://images.unsplash.com/photo-1489493512598-d08130f49bea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.0.3&q=80&w=1080"
     }
   ];
 
