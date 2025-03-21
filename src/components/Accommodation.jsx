@@ -12,7 +12,7 @@ import {
   FaWifi,
   FaClock,
   FaTree,
-  FaConcierge // Changed from FaConciergeBell to FaConcierge
+  FaConciergeBell // Corrected from FaConcierge to FaConciergeBell
 } from 'react-icons/fa';
 import MapComponent from './MapComponent';
 
@@ -59,7 +59,7 @@ const Accommodation = () => {
     { icon: <FaWifi className="w-5 h-5 text-morocco-primary" />, name: "Free Wi-Fi" },
     { icon: <FaClock className="w-5 h-5 text-morocco-primary" />, name: "24h Reception" },
     { icon: <FaTree className="w-5 h-5 text-morocco-primary" />, name: "Garden & Terrace" },
-    { icon: <FaConcierge className="w-5 h-5 text-morocco-primary" />, name: "Concierge Service" }, // Changed from FaConciergeBell to FaConcierge
+    { icon: <FaConciergeBell className="w-5 h-5 text-morocco-primary" />, name: "Concierge Service" }, // Corrected from FaConcierge to FaConciergeBell
   ];
 
   return (
@@ -181,7 +181,7 @@ const Accommodation = () => {
             </div>
             <div className="overflow-hidden rounded-lg shadow-md">
               <img 
-                src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwzfHxLZW56aSUyMFJvc2UlMjBHYXJkZW4lMjBIb3RlbCUyMHNwYSUyME1hcnJha2VjaHxlbnwwfHx8fDE3NDI2MTE4NTV8MA&ixlib=rb-4.0.3&q=80&w=1080" 
+                src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NjQ4Nzh8MHwxfHNlYXJjaHwzfHxLZW56aSUyMFJvc2UlMjBHYXJkZW4lMjBIb3RlbCUyMHNwYSUyME1hcnJha2VjaCUyMHNwYXxlbnwwfHx8fDE3NDI2MTE4NTV8MA&ixlib=rb-4.0.3&q=80&w=1080" 
                 alt="Kenzi Rose Garden Spa" 
                 className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500" 
                 data-image-request="Kenzi Rose Garden Hotel spa in Marrakech"
